@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Proveer la ubicación del sitemap
+Sitemap: https://www.cusig.co/sitemap.xml
