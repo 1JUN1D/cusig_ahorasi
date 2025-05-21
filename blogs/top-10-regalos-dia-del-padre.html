@@ -47,6 +47,8 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
             --color-background: #f8f9fa;
             --color-text: #333;
             --color-light: #ffffff;
+            --mercadolibre-yellow: #FFE600;
+            --mercadolibre-blue: #2D3277;
         }
         
         * {
@@ -143,31 +145,57 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
             font-style: italic;
         }
         
+        .btn-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
         .btn {
-            display: inline-block;
-            padding: 10px 25px;
-            background-color: var(--color-accent);
-            color: var(--color-light);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 25px;
+            background-color: var(--mercadolibre-yellow);
+            color: #333;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             text-align: center;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 280px;
+            width: 100%;
+            margin: 0 auto;
+            animation: pulse 2s infinite;
         }
         
         .btn:hover {
-            background-color: #e67e22;
+            background-color: #FFD100;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
         
-        .btn-primary {
-            background-color: var(--color-primary);
+        .btn img {
+            height: 20px;
+            margin-right: 10px;
         }
         
-        .btn-primary:hover {
-            background-color: #34495e;
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
         }
         
         .footer {
@@ -189,6 +217,11 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
             .blog-content {
                 padding: 20px;
             }
+            
+            .btn {
+                width: 100%;
+                max-width: 240px;
+            }
         }
     </style>
 </head>
@@ -209,7 +242,12 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
                 <p class="product-description">Si tu padre es amante de las buenas parrilladas y reuniones familiares al aire libre, este asador artesanal fabricado con barril reciclado será un regalo que lo dejará sin palabras. Estos asadores no solo son funcionales sino que tienen un estilo rústico que añade carácter a cualquier patio o terraza.</p>
                 <p class="product-description">Cada pieza es única, fabricada por artesanos colombianos que transforman barriles en auténticas obras de arte culinario. Incluye parrilla de acero inoxidable 304 quirúrgico de alta resistencia y manijas de madera tratada para exteriores, garantizando durabilidad y seguridad durante su uso. Su tamaño jumbo de 105x57 lo hace perfecto para reuniones familiares numerosas.</p>
                 <p class="product-note">Aquí en Mercado Libre puedes ver el precio del producto con grandes descuentos.</p>
-                <button id="btn-barril" class="btn btn-primary" onclick="fbqTrackCustomEvent('BarrilClick', 'Asador de Barril Premium', 'barril_premium'); window.open('https://articulo.mercadolibre.com.co/MCO-1574751185-barril-asador-acero-inoxidable-304-quirurgico-jumbo-105x57-_JM#polycard_client=search-nordic&position=15&search_layout=grid&type=item&tracking_id=62a333c9-dc90-4f0a-959a-14fb5b0c2fb9&wid=MCO1574751185&sid=search', '_blank')">Ver en Mercado Libre</button>
+                <div class="btn-container">
+                    <button id="btn-barril" class="btn" onclick="fbqTrackCustomEvent('BarrilClick', 'Asador de Barril Premium', 'barril_premium'); window.open('https://articulo.mercadolibre.com.co/MCO-1574751185-barril-asador-acero-inoxidable-304-quirurgico-jumbo-105x57-_JM#polycard_client=search-nordic&position=15&search_layout=grid&type=item&tracking_id=62a333c9-dc90-4f0a-959a-14fb5b0c2fb9&wid=MCO1574751185&sid=search', '_blank')">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/logo__small.png" alt="Logo Mercado Libre">
+                        Ver en Mercado Libre
+                    </button>
+                </div>
             </div>
             
             <!-- Producto 2: Kit para Arreglar Barba -->
@@ -219,7 +257,12 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
                 <p class="product-description">Para los padres que cuidan su imagen y mantienen una barba bien arreglada, este kit premium es el regalo ideal. Este grooming kit 4 en 1 de Soonsell incluye todo lo necesario para un cuidado completo: recortadora de precisión, accesorios especializados para diferentes longitudes y estilos, y todo lo necesario para mantener un look impecable.</p>
                 <p class="product-description">Este kit multifuncional no solo ayuda a recortar y dar forma a la barba, sino que también es útil para el cuidado general del vello facial y corporal. Su diseño ergonómico y su batería de larga duración lo convierten en un compañero ideal para el cuidado personal diario de papá.</p>
                 <p class="product-note">Aquí en Mercado Libre puedes ver el precio del producto con grandes descuentos.</p>
-                <button id="btn-kit-barba" class="btn btn-primary" onclick="fbqTrackCustomEvent('KitBarbaClick', 'Kit Premium para Barba', 'kit_barba'); window.open('https://www.mercadolibre.com.co/grooming-kit-recortadora-de-barba-4-en-1-soonsell-recortad/p/MCO2011220443#polycard_client=search-nordic&searchVariation=MCO2011220443&position=12&search_layout=grid&type=product&tracking_id=b6ea4348-af33-42a6-96c6-647f3ae61e70&wid=MCO2810059782&sid=search', '_blank')">Ver en Mercado Libre</button>
+                <div class="btn-container">
+                    <button id="btn-kit-barba" class="btn" onclick="fbqTrackCustomEvent('KitBarbaClick', 'Kit Premium para Barba', 'kit_barba'); window.open('https://www.mercadolibre.com.co/grooming-kit-recortadora-de-barba-4-en-1-soonsell-recortad/p/MCO2011220443#polycard_client=search-nordic&searchVariation=MCO2011220443&position=12&search_layout=grid&type=product&tracking_id=b6ea4348-af33-42a6-96c6-647f3ae61e70&wid=MCO2810059782&sid=search', '_blank')">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/logo__small.png" alt="Logo Mercado Libre">
+                        Ver en Mercado Libre
+                    </button>
+                </div>
             </div>
             
             <!-- Producto 3: Limpiador de Vello Nasal -->
@@ -229,7 +272,12 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
                 <p class="product-description">Un regalo práctico que nunca falla es este recortador de vello nasal profesional. Este dispositivo de precisión se ha convertido en uno de los regalos más solicitados gracias a su sistema indoloro y eficiente que mantiene una apariencia impecable sin molestias.</p>
                 <p class="product-description">Su diseño resistente al agua lo hace ideal para usar durante la ducha, simplificando la rutina de cuidado personal. Este recortador TTP Tri garantiza un corte preciso y seguro, sin tirones ni molestias, para que papá pueda mantener su aspecto impecable con total comodidad.</p>
                 <p class="product-note">Aquí en Mercado Libre puedes ver el precio del producto con grandes descuentos.</p>
-                <button id="btn-vello-nasal" class="btn btn-primary" onclick="fbqTrackCustomEvent('VelloNasalClick', 'Recortador de Vello Nasal Profesional', 'vello_nasal'); window.open('https://articulo.mercadolibre.com.co/MCO-1310964569-recortador-profesional-para-nariz-resistente-al-agua-ttp-tri-_JM?searchVariation=178121573236#polycard_client=search-nordic&searchVariation=178121573236&position=21&search_layout=stack&type=item&tracking_id=9f38be29-e18e-4aa4-bd91-eaabfc3947ec', '_blank')">Ver en Mercado Libre</button>
+                <div class="btn-container">
+                    <button id="btn-vello-nasal" class="btn" onclick="fbqTrackCustomEvent('VelloNasalClick', 'Recortador de Vello Nasal Profesional', 'vello_nasal'); window.open('https://articulo.mercadolibre.com.co/MCO-1310964569-recortador-profesional-para-nariz-resistente-al-agua-ttp-tri-_JM?searchVariation=178121573236#polycard_client=search-nordic&searchVariation=178121573236&position=21&search_layout=stack&type=item&tracking_id=9f38be29-e18e-4aa4-bd91-eaabfc3947ec', '_blank')">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/logo__small.png" alt="Logo Mercado Libre">
+                        Ver en Mercado Libre
+                    </button>
+                </div>
             </div>
             
             <!-- Producto 4: Set de Herramientas -->
@@ -239,7 +287,12 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
                 <p class="product-description">Para los padres que disfrutan arreglando cosas en casa o tienen ese espíritu de "hágalo usted mismo", este set de herramientas multifuncional de 6 piezas es el regalo perfecto. Este kit incluye extractores de tornillos, alicates, tijeras y otras herramientas esenciales presentadas en un elegante estuche de regalo.</p>
                 <p class="product-description">Lo que hace especial a este set no es solo la calidad de sus herramientas sino también su presentación, pensada específicamente como un regalo. Las herramientas están diseñadas para ofrecer un agarre cómodo y seguro, facilitando cualquier tarea de reparación o mantenimiento en el hogar.</p>
                 <p class="product-note">Aquí en Mercado Libre puedes ver el precio del producto con grandes descuentos.</p>
-                <button id="btn-kit-herramientas" class="btn btn-primary" onclick="fbqTrackCustomEvent('KitHerramientasClick', 'Set de Herramientas Multifuncional', 'kit_herramientas'); window.open('https://articulo.mercadolibre.com.co/MCO-2344657040-6piece-screw-extractor-pliers-scissors-tool-gift-set-_JM#polycard_client=search-nordic&position=25&search_layout=grid&type=item&tracking_id=f369a6a6-3c00-4dc1-822d-c035c5a4fc4a&wid=MCO2344657040&sid=search', '_blank')">Ver en Mercado Libre</button>
+                <div class="btn-container">
+                    <button id="btn-kit-herramientas" class="btn" onclick="fbqTrackCustomEvent('KitHerramientasClick', 'Set de Herramientas Multifuncional', 'kit_herramientas'); window.open('https://articulo.mercadolibre.com.co/MCO-2344657040-6piece-screw-extractor-pliers-scissors-tool-gift-set-_JM#polycard_client=search-nordic&position=25&search_layout=grid&type=item&tracking_id=f369a6a6-3c00-4dc1-822d-c035c5a4fc4a&wid=MCO2344657040&sid=search', '_blank')">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/logo__small.png" alt="Logo Mercado Libre">
+                        Ver en Mercado Libre
+                    </button>
+                </div>
             </div>
             
             <!-- Producto 5: Buchanan's -->
@@ -249,7 +302,12 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
                 <p class="product-description">Un regalo clásico que nunca pasa de moda es un buen whisky, y este Buchanan's Special Reserve es una opción que impresionará hasta al catador más exigente. Este whisky escocés ha sido cuidadosamente elaborado siguiendo tradiciones centenarias para ofrecer una experiencia sensorial única.</p>
                 <p class="product-description">Su sabor equilibrado con notas de vainilla, caramelo y un sutil toque de madera lo convierten en una excelente opción para disfrutar en momentos especiales. La presentación elegante de la botella lo convierte en un regalo visualmente atractivo, perfecto para sorprender a papá en su día.</p>
                 <p class="product-note">Aquí en Mercado Libre puedes ver el precio del producto con grandes descuentos.</p>
-                <button id="btn-buchanan" class="btn btn-primary" onclick="fbqTrackCustomEvent('BuchananClick', 'Buchanan Special Reserve', 'buchanan'); window.open('https://articulo.mercadolibre.com.co/MCO-1493323241-james-buchanan-s-specialreserve-_JM#polycard_client=search-nordic&position=16&search_layout=stack&type=item&tracking_id=2deb918e-6b2f-4c07-b0d9-0f35798c2281&wid=MCO1493323241&sid=search', '_blank')">Ver en Mercado Libre</button>
+                <div class="btn-container">
+                    <button id="btn-buchanan" class="btn" onclick="fbqTrackCustomEvent('BuchananClick', 'Buchanan Special Reserve', 'buchanan'); window.open('https://articulo.mercadolibre.com.co/MCO-1493323241-james-buchanan-s-specialreserve-_JM#polycard_client=search-nordic&position=16&search_layout=stack&type=item&tracking_id=2deb918e-6b2f-4c07-b0d9-0f35798c2281&wid=MCO1493323241&sid=search', '_blank')">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/logo__small.png" alt="Logo Mercado Libre">
+                        Ver en Mercado Libre
+                    </button>
+                </div>
             </div>
             
             <!-- Producto 6: Reloj Clásico -->
@@ -259,7 +317,12 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
                 <p class="product-description">Un buen reloj es más que un accesorio; es una declaración de estilo y sofisticación. Este modelo Orient Star con su diseño clásico y elegante complementa tanto atuendos formales como casuales, convirtiéndose en el compañero perfecto para el día a día de papá.</p>
                 <p class="product-description">Su excelente manufactura garantiza precisión y fiabilidad, mientras que su diseño atemporal asegura que se mantenga impecable con el paso del tiempo. Este reloj combina la tradición relojera japonesa con detalles refinados que lo convierten en una pieza que puede ser heredada de generación en generación.</p>
                 <p class="product-note">Aquí en Mercado Libre puedes ver el precio del producto con grandes descuentos.</p>
-                <button id="btn-reloj" class="btn btn-primary" onclick="fbqTrackCustomEvent('RelojClick', 'Reloj Orient Star', 'reloj_orient'); window.open('https://articulo.mercadolibre.com.co/MCO-482985279-reloj-orient-star-para-mujer-clasico-y-elegante-_JM#polycard_client=search-nordic&position=4&search_layout=stack&type=item&tracking_id=881c8b2a-c627-4995-bac1-8fb9f51b9218&wid=MCO482985279&sid=search', '_blank')">Ver en Mercado Libre</button>
+                <div class="btn-container">
+                    <button id="btn-reloj" class="btn" onclick="fbqTrackCustomEvent('RelojClick', 'Reloj Orient Star', 'reloj_orient'); window.open('https://articulo.mercadolibre.com.co/MCO-482985279-reloj-orient-star-para-mujer-clasico-y-elegante-_JM#polycard_client=search-nordic&position=4&search_layout=stack&type=item&tracking_id=881c8b2a-c627-4995-bac1-8fb9f51b9218&wid=MCO482985279&sid=search', '_blank')">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/logo__small.png" alt="Logo Mercado Libre">
+                        Ver en Mercado Libre
+                    </button>
+                </div>
             </div>
             
             <!-- Producto 7: Hamaca Colombiana -->
@@ -269,7 +332,12 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
                 <p class="product-description">Regala momentos de descanso y tranquilidad con esta lujosa hamaca acolchada reversible Sunbrella de Algoma. Su capacidad para soportar hasta 500 libras (227 kg) la hace perfecta para un descanso seguro y confortable, ideal para esos momentos de relajación que todo padre merece.</p>
                 <p class="product-description">El tejido Sunbrella es conocido por su resistencia a los elementos y su durabilidad excepcional, lo que garantiza que esta hamaca mantendrá su aspecto y funcionalidad durante años. Su diseño reversible ofrece dos opciones de color en un solo producto, adaptándose fácilmente a diferentes espacios exteriores o interiores.</p>
                 <p class="product-note">Aquí en Mercado Libre puedes ver el precio del producto con grandes descuentos.</p>
-                <button id="btn-hamaca" class="btn btn-primary" onclick="fbqTrackCustomEvent('HamacaClick', 'Hamaca Acolchada Reversible', 'hamaca_sunbrella'); window.open('https://articulo.mercadolibre.com.co/MCO-2314670132-algoma-hamaca-acolchada-reversible-sunbrella-de-500-libr-_JM?searchVariation=182395804179#polycard_client=search-nordic&searchVariation=182395804179&position=34&search_layout=grid&type=item&tracking_id=0ff3411b-0320-444e-83ab-fe34099a925f', '_blank')">Ver en Mercado Libre</button>
+                <div class="btn-container">
+                    <button id="btn-hamaca" class="btn" onclick="fbqTrackCustomEvent('HamacaClick', 'Hamaca Acolchada Reversible', 'hamaca_sunbrella'); window.open('https://articulo.mercadolibre.com.co/MCO-2314670132-algoma-hamaca-acolchada-reversible-sunbrella-de-500-libr-_JM?searchVariation=182395804179#polycard_client=search-nordic&searchVariation=182395804179&position=34&search_layout=grid&type=item&tracking_id=0ff3411b-0320-444e-83ab-fe34099a925f', '_blank')">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/logo__small.png" alt="Logo Mercado Libre">
+                        Ver en Mercado Libre
+                    </button>
+                </div>
             </div>
             
             <!-- Producto 8: Set de Cuidado de Zapatos -->
@@ -279,7 +347,12 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
                 <p class="product-description">Para los padres que aprecian el buen calzado y entienden que un par de zapatos bien cuidados puede durar toda una vida, este set ultimate de 10 cepillos para zapatos de Footfitter es el regalo ideal. Este completo kit incluye todo lo necesario para mantener el calzado en condiciones óptimas.</p>
                 <p class="product-description">Los 10 cepillos especializados están diseñados para diferentes tipos de materiales y fases del proceso de limpieza y cuidado. Desde cepillos para aplicar cremas y pomadas hasta cepillos para pulir y dar brillo, este set garantiza que papá pueda mantener su calzado impecable en cualquier ocasión.</p>
                 <p class="product-note">Aquí en Mercado Libre puedes ver el precio del producto con grandes descuentos.</p>
-                <button id="btn-set-zapatos" class="btn btn-primary" onclick="fbqTrackCustomEvent('SetZapatosClick', 'Set Cepillos Zapatos Footfitter', 'set_zapatos'); window.open('https://articulo.mercadolibre.com.co/MCO-1430757719-cuidado-de-zapatos-footfitter-ultimate-shoe-brush-set-10-_JM#polycard_client=search-nordic&position=26&search_layout=grid&type=item&tracking_id=78aee0af-03bb-44e7-8252-fe9c5272c550&wid=MCO1430757719&sid=search', '_blank')">Ver en Mercado Libre</button>
+                <div class="btn-container">
+                    <button id="btn-set-zapatos" class="btn" onclick="fbqTrackCustomEvent('SetZapatosClick', 'Set Cepillos Zapatos Footfitter', 'set_zapatos'); window.open('https://articulo.mercadolibre.com.co/MCO-1430757719-cuidado-de-zapatos-footfitter-ultimate-shoe-brush-set-10-_JM#polycard_client=search-nordic&position=26&search_layout=grid&type=item&tracking_id=78aee0af-03bb-44e7-8252-fe9c5272c550&wid=MCO1430757719&sid=search', '_blank')">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/logo__small.png" alt="Logo Mercado Libre">
+                        Ver en Mercado Libre
+                    </button>
+                </div>
             </div>
             
             <!-- Producto 9: Termo Premium -->
@@ -289,7 +362,12 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
                 <p class="product-description">Para los amantes del mate o quienes disfrutan de bebidas calientes durante el día, este kit de yerba mate de acero inoxidable premium es un regalo que combina tradición y elegancia. Fabricado con materiales de alta calidad, este set incluye todo lo necesario para disfrutar de una auténtica experiencia de mate.</p>
                 <p class="product-description">El kit incluye un termo de acero inoxidable que mantiene la temperatura ideal por horas, una calabaza para mate tradicional y bombilla. Su diseño elegante y su acabado premium lo convierten en un regalo perfecto para padres que aprecian las tradiciones sudamericanas o quieren iniciarse en el mundo del mate.</p>
                 <p class="product-note">Aquí en Mercado Libre puedes ver el precio del producto con grandes descuentos.</p>
-                <button id="btn-termo" class="btn btn-primary" onclick="fbqTrackCustomEvent('TermoClick', 'Kit Yerba Mate Premium', 'kit_mate'); window.open('https://articulo.mercadolibre.com.co/MCO-1579467759-cuopru-kit-de-yerba-mate-de-acero-inoxidable-premium-calaba-_JM#polycard_client=search-nordic&position=12&search_layout=stack&type=item&tracking_id=e8af39be-37e7-4c1b-bd13-131674b5f9f8&wid=MCO1579467759&sid=search', '_blank')">Ver en Mercado Libre</button>
+                <div class="btn-container">
+                    <button id="btn-termo" class="btn" onclick="fbqTrackCustomEvent('TermoClick', 'Kit Yerba Mate Premium', 'kit_mate'); window.open('https://articulo.mercadolibre.com.co/MCO-1579467759-cuopru-kit-de-yerba-mate-de-acero-inoxidable-premium-calaba-_JM#polycard_client=search-nordic&position=12&search_layout=stack&type=item&tracking_id=e8af39be-37e7-4c1b-bd13-131674b5f9f8&wid=MCO1579467759&sid=search', '_blank')">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/logo__small.png" alt="Logo Mercado Libre">
+                        Ver en Mercado Libre
+                    </button>
+                </div>
             </div>
             
             <!-- Producto 10: Billetera de Cuero -->
@@ -299,43 +377,48 @@ src="https://www.facebook.com/tr?id=984092197130648&ev=PageView&noscript=1"
                 <p class="product-description">Una billetera de calidad es un accesorio que todo hombre aprecia, y esta Bellroy Hide & Seek eleva el concepto a otro nivel. Fabricada con cuero de primera calidad, esta billetera combina un diseño delgado y elegante con una funcionalidad excepcional que incluye compartimentos ocultos para mayor seguridad.</p>
                 <p class="product-description">Su diseño inteligente incluye compartimentos para tarjetas, billetes y monedas, optimizando el espacio sin sacrificar la delgadez. La atención al detalle y la calidad de los materiales hacen de esta billetera un regalo duradero que papá apreciará cada día cuando la use.</p>
                 <p class="product-note">Aquí en Mercado Libre puedes ver el precio del producto con grandes descuentos.</p>
-                <button id="btn-billetera" class="btn btn-primary" onclick="fbqTrackCustomEvent('BilleteraClick', 'Billetera Bellroy Hide & Seek', 'billetera_bellroy'); window.open('https://articulo.mercadolibre.com.co/MCO-2118056942-bellroy-hide-seek-cartera-diseo-plegable-de-cuero-delgado-_JM#polycard_client=search-nordic&position=13&search_layout=grid&type=item&tracking_id=6b0c9313-a8cb-46ef-9d95-771051bf51f5&wid=MCO2118056942&sid=search', '_blank')">Ver en Mercado Libre</button>
-            </div>
-        </div>
-        
-        <div class="footer">
-            <p>© 2025 - Los mejores regalos para el Día del Padre en Colombia</p>
-        </div>
-    </div>
-    
-    <!-- Script de rastreo y diagnóstico mejorado -->
-    <script>
-    // Función auxiliar para eventos personalizados
-    function fbqTrackCustomEvent(eventName, productName, productId) {
-      try {
-        if (typeof fbq === 'function') {
-          fbq('trackCustom', eventName, {
-            product_name: productName,
-            product_id: productId,
-            timestamp: new Date().getTime()
-          });
-          console.log('Evento personalizado registrado:', eventName, productName, productId);
-        } else {
-          console.error('fbq no está definido. El píxel podría no estar cargado correctamente.');
-        }
-      } catch (error) {
-        console.error('Error al registrar evento:', error);
-      }
-    }
-    
-    // Verificar si el píxel de Facebook está cargado correctamente
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof fbq === 'function') {
-        console.log('Píxel de Facebook cargado correctamente');
-      } else {
-        console.warn('Píxel de Facebook no está cargado correctamente');
-      }
-    });
-    </script>
+                <div class="btn-container">
+                    <button id="btn-billetera" class="btn" onclick="fbqTrackCustomEvent('BilleteraClick', 'Billetera Bellroy Hide & Seek', 'billetera_bellroy'); window.open('https://articulo.mercadolibre.com.co/MCO-2118056942-bellroy-hide-seek-cartera-diseo-plegable-de-cuero-delgado-_JM#polycard_client=search-nordic&position=13&search_layout=grid&type=item&tracking_id=6b0c9313-a8cb-46ef-9d95-771051bf51f5&wid=MCO2118056942&sid=search', '_blank')">
+                        <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/logo__small.png" alt="Logo Mercado Libre">
+                       Ver en Mercado Libre
+                   </button>
+               </div>
+           </div>
+       </div>
+       
+       <div class="footer">
+           <p>© 2025 - Los mejores regalos para el Día del Padre en Colombia</p>
+       </div>
+   </div>
+   
+   <!-- Script de rastreo y diagnóstico mejorado -->
+   <script>
+   // Función auxiliar para eventos personalizados
+   function fbqTrackCustomEvent(eventName, productName, productId) {
+     try {
+       if (typeof fbq === 'function') {
+         fbq('trackCustom', eventName, {
+           product_name: productName,
+           product_id: productId,
+           timestamp: new Date().getTime()
+         });
+         console.log('Evento personalizado registrado:', eventName, productName, productId);
+       } else {
+         console.error('fbq no está definido. El píxel podría no estar cargado correctamente.');
+       }
+     } catch (error) {
+       console.error('Error al registrar evento:', error);
+     }
+   }
+   
+   // Verificar si el píxel de Facebook está cargado correctamente
+   document.addEventListener('DOMContentLoaded', function() {
+     if (typeof fbq === 'function') {
+       console.log('Píxel de Facebook cargado correctamente');
+     } else {
+       console.warn('Píxel de Facebook no está cargado correctamente');
+     }
+   });
+   </script>
 </body>
 </html>
